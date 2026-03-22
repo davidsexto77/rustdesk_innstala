@@ -1811,7 +1811,7 @@ class _FileDialogEvent extends BaseEvent<FileDialogType, Map<String, dynamic>> {
               overrideConfirm: _overrideConfirm, skip: _skip);
         };
       default:
-        debugPrint("Unknown event type: $type with $data");
+      //  debugPrint("Unknown event type: $type with $data");
         return null;
     }
   }
@@ -1824,12 +1824,12 @@ class FileDialogEventLoop
 
   @override
   Future<void> onPreConsume(
-      BaseEvent<FileDialogType, Map<String, dynamic>> evt) async {
+      dynamic evt) async {
     var event = evt as _FileDialogEvent;
     event.setOverrideConfirm(_overrideConfirm);
     event.setSkip(_skip);
-    debugPrint(
-        "FileDialogEventLoop: consuming<jobId: ${evt.data['id']} overrideConfirm: $_overrideConfirm, skip: $_skip>");
+   // debugPrint(
+   //     "FileDialogEventLoop: consuming<jobId: ${evt.data['id']} overrideConfirm: $_overrideConfirm, skip: $_skip>");
   }
 
   @override
