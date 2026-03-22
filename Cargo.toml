@@ -1,5 +1,5 @@
 [package]
-name = "innstala"
+name = "rustdesk"
 version = "1.4.6"
 authors = ["innstala <info@innstala.es>"]
 edition = "2021"
