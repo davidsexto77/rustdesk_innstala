@@ -1,4 +1,4 @@
-# Innstala - Soporte Remoto
+# Innstala Client - Soporte Remoto
 
 <p align="center">
   <img src="innstala_banner.png" alt="Innstala Banner" width="600" style="background-color: #1a1a1a; padding: 10px; border-radius: 8px;">
