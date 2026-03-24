@@ -110,7 +110,25 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 color: Colors.grey,
                 fontStyle: FontStyle.italic,
               ),
-            ),
+              const SizedBox(height: 15), 
+              Center( // <--- Añadimos esto para que no salga pegado a la izquierda
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.redAccent.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Text(
+                    'Soporte ACTIVO SOLO mientras esta ventana esté ABIERTA',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
