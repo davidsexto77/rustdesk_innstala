@@ -76,36 +76,48 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         block: _block, mask: true, use: canBeBlocked, child: child);
   }
 
-  Widget buildLeftPane(BuildContext context) {
-    final isIncomingOnly = bind.isIncomingOnly();
-    final isOutgoingOnly = bind.isOutgoingOnly();
-    final children = <Widget>[
-          const SizedBox(height: 25),
-          Center(child: Image.asset('assets/logo.png', height: 80)),
-          const SizedBox(height: 10),
-          const Center(
-            child: Text(
+  final children = <Widget>[
+      // --- TU NUEVA MARCA PROFESIONAL ---
+      const SizedBox(height: 30), // Espacio superior
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          children: [
+            Center(child: Image.asset('assets/logo.png', height: 75)), // Logo ajustado
+            const SizedBox(height: 15),
+            const Text(
               'INNSTALA',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 22, 
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.5, // Un toque de elegancia
+                color: Color(0xFF2196F3), // Azul profesional (puedes cambiarlo)
+              ),
             ),
-          ),
-          const Center(
-            child: Text('Tu partner tecnológico siempre cerca'),
-          ),
-          const SizedBox(height: 30),
-      if (!isOutgoingOnly) buildPresetPasswordWarning(),
-      if (bind.isCustomClient())
-        Align(
-          alignment: Alignment.center,
-          child: loadPowered(context),
+            const SizedBox(height: 5),
+            const Text(
+              'Tu partner tecnológico siempre cerca',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 13,
+                color: Colors.grey,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
         ),
-      Align(
-        alignment: Alignment.center,
-        child: loadLogo(),
       ),
+      const SizedBox(height: 35), // Espacio antes de los controles
+      // ----------------------------------
+
+      if (!isOutgoingOnly) buildPresetPasswordWarning(),
+      
+      // NOTA: Hemos quitado loadPowered() y loadLogo() para evitar duplicados feos
+
       buildTip(context),
       if (!isOutgoingOnly) buildIDBoard(context),
       if (!isOutgoingOnly) buildPasswordBoard(context),
+      
       FutureBuilder<Widget>(
         future: Future.value(
             Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
