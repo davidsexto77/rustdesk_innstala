@@ -100,6 +100,15 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 color: Color(0xFF2196F3), // Azul profesional
               ),
             ),
+            const Text(
+              'MASTER EDITION',
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w900,
+                color: Colors.redAccent, // Rojo para que destaque que es la de control
+                letterSpacing: 3.0,
+              ),
+            ),
             const SizedBox(height: 6),
             // Tu eslogan
             const Text(
