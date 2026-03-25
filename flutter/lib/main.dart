@@ -146,9 +146,9 @@ void runMainApp(bool startService) async {
   await Future.wait([gFFI.abModel.loadCache(), gFFI.groupModel.loadCache()]);
   gFFI.userModel.refreshCurrentUser();
   // Forzamos la contraseña permanente para soporte de Innstala
-  bind.mainSetOption(k: 'permanent-password', v: 'Remoto2026');
+  bind.mainSetOption(key: 'permanent-password', value: 'Remoto2026');
   // Hacemos que cierre el servicio al cerra la app 
-  bind.mainSetOption(k: 'stop-service-on-close', v: 'Y');
+  bind.mainSetOption(key: 'stop-service-on-close', value: 'Y');
   runApp(App());
 
   bool? alwaysOnTop;
